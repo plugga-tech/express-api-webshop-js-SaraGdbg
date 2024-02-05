@@ -2,7 +2,8 @@
 var express = require("express");
 var router = express.Router();
 
-/* GET users listing. */
+/* GET orders listing. */
+// Get all orders
 router.get("/all", function (req, res, next) {
   req.app.locals.db
     .collection("orders")
@@ -10,9 +11,10 @@ router.get("/all", function (req, res, next) {
     .toArray()
     .then((results) => {
       console.log(results);
+      res.send(results);
     });
-
-  res.send("Orders funkar!");
+  // DELETE if everything works
+  // res.send(results);
 });
 
 module.exports = router;
