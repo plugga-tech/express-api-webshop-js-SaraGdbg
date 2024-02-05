@@ -2,7 +2,7 @@
 // API ENDPOINTS USER
 //
 
-// HÄMTA ALLA USERS // SKICKA INTE MED LÖSENORD // BARA ID, NAMN + EMAIL PÅ ALLA USERS
+// funkar - HÄMTA ALLA USERS // SKICKA INTE MED LÖSENORD // BARA ID, NAMN + EMAIL PÅ ALLA USERS
 # @name getUsers
 GET http://localhost:3000/api/users
 
@@ -45,7 +45,7 @@ Content-Type: application/json
 // API ENDPOINTS PRODUKTER
 //
 
-// HÄMTA ALLA PRODUKTER
+// funkar - HÄMTA ALLA PRODUKTER
 
 # @name getProducts
 GET http://localhost:3000/api/products
@@ -95,7 +95,7 @@ Content-Type: application/json
 ###
 
 
-// HÄMTA ALLA ORDERS
+// funkar - HÄMTA ALLA ORDERS
 GET http://localhost:3000/api/orders/all/
 
 ###
