@@ -3,11 +3,21 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
-// Gör routerna till variabler som används i app.use
+// Creates variables from the routers, to use in app.js
 const indexRouter = require("./routes/index");
 const ordersRouter = require("./routes/orders");
 const productsRouter = require("./routes/products");
 const usersRouter = require("./routes/users");
+
+// Impport MongoDB
+const MongoClient = require("mongodb").MongoClient;
+
+MongoClient.connect("mongodb://127.0.0.1:27017").then((client) => {
+  console.log("Vi är uppkopplade mot databasen!");
+
+  const db = client.db("sara-gadeberg");
+  app.locals.db = db;
+});
 
 var app = express();
 
