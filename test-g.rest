@@ -8,12 +8,12 @@ GET http://localhost:3000/api/users
 
 ###
 
-// HÄMTA SPECIFIK USER // SKICKA HELA OBJEKTET
+// funkar - HÄMTA SPECIFIK USER // SKICKA HELA OBJEKTET
 POST http://localhost:3000/api/users/
 Content-Type: application/json
 
 {
-  "id": " // EN USER ID"
+  "id": "65c0f50414ba1c3aebaa2f18"
 }
 
 ###
@@ -30,13 +30,13 @@ Content-Type: application/json
 
 ###
 
-// LOGGA IN USER
+// funkar - LOGGA IN USER
 POST http://localhost:3000/api/users/login
 Content-Type: application/json
 
 {
-  "email": "// EN USER EMAIL",
-  "password": "// EN USER EMAIL"
+  "email": "lisa@mail.com",
+  "password": "test"
 } 
 
 ###
