@@ -9,7 +9,7 @@ const ordersRouter = require("./routes/orders");
 const productsRouter = require("./routes/products");
 const usersRouter = require("./routes/users");
 
-// Impport MongoDB
+// Import MongoDB
 const MongoClient = require("mongodb").MongoClient;
 
 MongoClient.connect("mongodb://127.0.0.1:27017").then((client) => {
@@ -27,7 +27,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-// Kopplar ihop routers med app.js
+// Connects routes with app.js
 app.use("/", indexRouter);
 app.use("/api/orders", ordersRouter);
 app.use("/api/products", productsRouter);

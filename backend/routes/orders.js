@@ -14,8 +14,6 @@ router.get("/all", function (req, res, next) {
       console.log(results);
       res.send(results);
     });
-  // DELETE if everything works
-  // res.send(results);
 });
 
 // Add new order to specifik user
@@ -30,10 +28,10 @@ router.post("/add", async (req, res) => {
     console.log(userId);
 
     if (userExists) {
-      // if the user exists in the user collection, add new order in orders - connected to that user
+      // If the user exists in the user collection, add new order in orders - connected to that user
       await req.app.locals.db.collection("orders").insertOne({ user, products });
 
-      // Minska lagermängden för varje produkt i products-collectionen
+      // Adjust lager quantity of ordered products
       for (const product of products) {
         const { productId, quantity } = product;
         await req.app.locals.db.collection("products").updateOne(
@@ -43,7 +41,7 @@ router.post("/add", async (req, res) => {
       }
       res.status(201).json({ message: "Ny order har lagts till för existerande kund" });
     } else {
-      // if the user doesn't exist in the user collection, add user to user collection + add order to order ceollection
+      // If the user doesn't exist in the user collection, add user to user collection + add order to order ceollection
 
       res.status(400).json({ message: "Användaren finns inte, vänligen registrera dig för att slutföra din order" });
     }

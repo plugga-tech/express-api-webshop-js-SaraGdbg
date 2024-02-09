@@ -16,7 +16,7 @@ router.get("/", function (req, res, next) {
     });
 });
 
-// Create a new product - inte klar!
+// Create a new product
 router.post("/add", function (req, res) {
   req.app.locals.db
     .collection("products")
@@ -40,7 +40,7 @@ router.get("/:id", async (req, res) => {
     // Send the user back as JSON-object
     res.json(product);
   } catch (error) {
-    console.error("Fel vid hämtning av produkt:", error);
+    console.error("Error getting product:", error);
     res.status(500).json({ error: "Internt serverfel" });
   }
 });

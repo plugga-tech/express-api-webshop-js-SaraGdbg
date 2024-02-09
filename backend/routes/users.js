@@ -35,7 +35,7 @@ router.post("/", async (req, res) => {
       return res.status(404).json({ message: "Ingen användare med detta id hittades" });
     }
 
-    // Skicka tillbaka användarobjektet som JSON
+    // Send result back as JSON
     res.json(user);
   } catch (error) {
     console.error("Fel vid hämtning av användare:", error);
@@ -72,7 +72,7 @@ router.post("/login", async (req, res) => {
       return res.status(401).json({ message: "Fel lösenord. Inloggning misslyckades" });
     }
   } catch (error) {
-    console.error("Fel vid användarlogin:", error);
+    console.error("Login error:", error);
     res.status(500).json({ error: "Internt serverfel" });
   }
 });
